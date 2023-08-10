@@ -32,30 +32,47 @@ void All_car::May()
         int ranking = 1; // 순서대로 출력하기 위한 변수
         int columnCount = sqlite3_column_count(stmt);
 
+        // while (sqlite3_step(stmt) == SQLITE_ROW)
+        // {
+        //     std::cout << ranking << ". "; // 순서 출력
+
+        //     for (int i = 0; i < columnCount; i++)
+        //     {
+        //         const char *columnText = reinterpret_cast<const char *>(sqlite3_column_text(stmt, i)); // 결과 집합에서 열 값을 가져온다
+        //         if (i == 3)                                                                            // May 컬럼 처리
+        //         {
+        //             double mayvalue = sqlite3_column_double(stmt, i); // double 값으로 변환
+        //             double percentage = (mayvalue / totalsales) * 100;
+        //             std::cout << static_cast<int>(mayvalue) << " (" << std::fixed << std::setprecision(1) << percentage << "%) ";
+        //         }
+        //         else
+        //         {
+        //             std::cout << (columnText ? columnText : "") << " "; // columnText가 널문자가 아니면 출력 맞으면 " "출력
+        //         }
+        //     }
+
+        //     std::cout << std::endl;
+
+        //     ranking++; // 다음 순위로 증가
+        // }
+        std::cout << "순위\t브랜드\t\t차종\t\t모델\t\t\t판매량(점유율)" << std::endl;
         while (sqlite3_step(stmt) == SQLITE_ROW)
         {
-            std::cout << ranking << ". "; // 순서 출력
-
-            for (int i = 0; i < columnCount; i++)
-            {
-                const char *columnText = reinterpret_cast<const char *>(sqlite3_column_text(stmt, i)); // 결과 집합에서 열 값을 가져온다
-                if (i == 3)                                                                            // May 컬럼 처리
-                {
-                    double mayvalue = sqlite3_column_double(stmt, i); // double 값으로 변환
-                    double percentage = (mayvalue / totalsales) * 100;
-                    std::cout << static_cast<int>(mayvalue) << " (" << std::fixed << std::setprecision(1) << percentage << "%) ";
-                }
-                else
-                {
-                    std::cout << (columnText ? columnText : "") << " "; // columnText가 널문자가 아니면 출력 맞으면 " "출력
-                }
-            }
-
-            std::cout << std::endl;
-
-            ranking++; // 다음 순위로 증가
+            // sqlite3_column_text가 const unsigned char형으로 반환함
+            const unsigned char *brand1 = (sqlite3_column_text(stmt, 0));
+            const unsigned char *type1 = (sqlite3_column_text(stmt, 1));
+            const unsigned char *model1 = (sqlite3_column_text(stmt, 2));
+            int month1 = sqlite3_column_int(stmt, 3);
+            double salesShare = ((month1 / (double)totalsales) * 100);
+            // 실수 출력 원래대로
+            std::cout.precision(0);
+            std::cout << ranking << "\t" << std::left << std::setw(15) << brand1 << "\t" << type1
+                      << "\t\t" << std::left << std::setw(22) << model1 << "\t" << month1 << "(";
+            // precision(n) : 소수점 유효숫자 n의 자리 출력
+            std::cout.precision(3);
+            std::cout << salesShare << "%)" << std::endl;
+            ranking++;
         }
-
         sqlite3_finalize(stmt);
     }
 }
@@ -92,28 +109,46 @@ void All_car::June()
         int ranking = 1; // 순서대로 출력하기 위한 변수
         int columnCount = sqlite3_column_count(stmt);
 
+        // while (sqlite3_step(stmt) == SQLITE_ROW)
+        // {
+        //     std::cout << ranking << ". "; // 순서 출력
+
+        //     for (int i = 0; i < columnCount; i++)
+        //     {
+        //         const char *columnText = reinterpret_cast<const char *>(sqlite3_column_text(stmt, i));
+        //         if (i == 3) // May 컬럼 처리
+        //         {
+        //             double mayvalue = sqlite3_column_double(stmt, i); // double 값으로 변환
+        //             double percentage = (mayvalue / totalsales) * 100;
+        //             std::cout << static_cast<int>(mayvalue) << " (" << std::fixed << std::setprecision(1) << percentage << "%) ";
+        //         }
+        //         else
+        //         {
+        //             std::cout << (columnText ? columnText : "") << std::left << std::setw(22);
+        //         }
+        //     }
+
+        //     std::cout << std::endl;
+
+        //     ranking++; // 다음 순위로 증가
+        // }
+        std::cout << "순위\t브랜드\t\t차종\t\t모델\t\t\t판매량(점유율)" << std::endl;
         while (sqlite3_step(stmt) == SQLITE_ROW)
         {
-            std::cout << ranking << ". "; // 순서 출력
-
-            for (int i = 0; i < columnCount; i++)
-            {
-                const char *columnText = reinterpret_cast<const char *>(sqlite3_column_text(stmt, i));
-                if (i == 3) // May 컬럼 처리
-                {
-                    double mayvalue = sqlite3_column_double(stmt, i); // double 값으로 변환
-                    double percentage = (mayvalue / totalsales) * 100;
-                    std::cout << static_cast<int>(mayvalue) << " (" << std::fixed << std::setprecision(1) << percentage << "%) ";
-                }
-                else
-                {
-                    std::cout << (columnText ? columnText : "") << " ";
-                }
-            }
-
-            std::cout << std::endl;
-
-            ranking++; // 다음 순위로 증가
+            // sqlite3_column_text가 const unsigned char형으로 반환함
+            const unsigned char *brand1 = (sqlite3_column_text(stmt, 0));
+            const unsigned char *type1 = (sqlite3_column_text(stmt, 1));
+            const unsigned char *model1 = (sqlite3_column_text(stmt, 2));
+            int month1 = sqlite3_column_int(stmt, 3);
+            double salesShare = ((month1 / (double)totalsales) * 100);
+            // 실수 출력 원래대로
+            std::cout.precision(0);
+            std::cout << ranking << "\t" << std::left << std::setw(15) << brand1 << "\t" << type1
+                      << "\t\t" << std::left << std::setw(22) << model1 << "\t" << month1 << "(";
+            // precision(n) : 소수점 유효숫자 n의 자리 출력
+            std::cout.precision(3);
+            std::cout << salesShare << "%)" << std::endl;
+            ranking++;
         }
 
         sqlite3_finalize(stmt);
@@ -152,30 +187,47 @@ void All_car::July()
         int ranking = 1; // 순서대로 출력하기 위한 변수
         int columnCount = sqlite3_column_count(stmt);
 
+        // while (sqlite3_step(stmt) == SQLITE_ROW)
+        // {
+        //     std::cout << ranking << ". "; // 순서 출력
+
+        //     for (int i = 0; i < columnCount; i++)
+        //     {
+        //         const char *columnText = reinterpret_cast<const char *>(sqlite3_column_text(stmt, i));
+        //         if (i == 3) // May 컬럼 처리
+        //         {
+        //             double mayvalue = sqlite3_column_double(stmt, i); // double 값으로 변환
+        //             double percentage = (mayvalue / totalsales) * 100;
+        //             std::cout << static_cast<int>(mayvalue) << " (" << std::fixed << std::setprecision(1) << percentage << "%) ";
+        //         }
+        //         else
+        //         {
+        //             std::cout << (columnText ? columnText : "") << " ";
+        //         }
+        //     }
+
+        //     std::cout << std::endl;
+
+        //     ranking++; // 다음 순위로 증가
+        // }
+        std::cout << "순위\t브랜드\t\t차종\t\t모델\t\t\t판매량(점유율)" << std::endl;
         while (sqlite3_step(stmt) == SQLITE_ROW)
         {
-            std::cout << ranking << ". "; // 순서 출력
-
-            for (int i = 0; i < columnCount; i++)
-            {
-                const char *columnText = reinterpret_cast<const char *>(sqlite3_column_text(stmt, i));
-                if (i == 3) // May 컬럼 처리
-                {
-                    double mayvalue = sqlite3_column_double(stmt, i); // double 값으로 변환
-                    double percentage = (mayvalue / totalsales) * 100;
-                    std::cout << static_cast<int>(mayvalue) << " (" << std::fixed << std::setprecision(1) << percentage << "%) ";
-                }
-                else
-                {
-                    std::cout << (columnText ? columnText : "") << " ";
-                }
-            }
-
-            std::cout << std::endl;
-
-            ranking++; // 다음 순위로 증가
+            // sqlite3_column_text가 const unsigned char형으로 반환함
+            const unsigned char *brand1 = (sqlite3_column_text(stmt, 0));
+            const unsigned char *type1 = (sqlite3_column_text(stmt, 1));
+            const unsigned char *model1 = (sqlite3_column_text(stmt, 2));
+            int month1 = sqlite3_column_int(stmt, 3);
+            double salesShare = ((month1 / (double)totalsales) * 100);
+            // 실수 출력 원래대로
+            std::cout.precision(0);
+            std::cout << ranking << "\t" << std::left << std::setw(15) << brand1 << "\t" << type1
+                      << "\t\t" << std::left << std::setw(22) << model1 << "\t" << month1 << "(";
+            // precision(n) : 소수점 유효숫자 n의 자리 출력
+            std::cout.precision(3);
+            std::cout << salesShare << "%)" << std::endl;
+            ranking++;
         }
-
         sqlite3_finalize(stmt);
     }
 }

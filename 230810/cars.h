@@ -6,6 +6,8 @@
 #include <sqlite3.h>
 #include <unistd.h>
 #include <iomanip> //정렬
+#include "Brand.h"
+#include "cars1.h"
 
 class All_car
 {
@@ -41,6 +43,13 @@ public:
     void May();
     void June();
     void July();
+};
+
+class All_Main
+{
+private:
+public:
+    int Main();
 };
 
 #endif

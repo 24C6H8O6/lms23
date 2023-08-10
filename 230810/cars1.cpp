@@ -23,9 +23,8 @@ int carType::choiceType(int number)
         }
         else if (choice_type == 13)
         {
-            std::cout << "종료합니다!!" << std::endl;
-            // exit(0);
             number = 1;
+            system("clear");
             break;
         }
         else
@@ -64,9 +63,8 @@ int carType::choiceMonth(int number)
         }
         else if (choice_month == 4)
         {
-            std::cout << "종료합니다!!" << std::endl;
-            // exit(0);
             number = 1;
+            system("clear");
             break;
         }
         else
@@ -103,7 +101,6 @@ int carType::type()
     {
         sumCar = sqlite3_column_int(stmt_check2, 0);
     }
-    std::cout << "총합 : " << sumCar << std::endl;
 
     // 타입별 sql문
     std::string sql2 = "SELECT Brand, Model, " + month + " FROM cars WHERE Type=? ORDER BY " + month + " DESC;";
@@ -127,7 +124,15 @@ int carType::type()
     {
         month = "7";
     }
-    std::cout << "순번\t브랜드\t모델\t" << month << "월판매량 점유율" << std::endl;
+    std::cout << "┌─────────────────────────────────────────────┐" << std::endl;
+    std::cout << "│                                             │" << std::endl;
+    std::cout << "│              " + month + "월 자동차 판매 실적           │" << std::endl;
+    std::cout << "│                                             │" << std::endl;
+    std::cout << "└─────────────────────────────────────────────┘" << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << "차종 : " << car_type << std::endl;
+    std::cout << "총 판매량 : " << sumCar << "대" << std::endl;
+    std::cout << "순번\t브랜드\t\t모델\t\t\t" << month << "월판매량(점유율)" << std::endl;
 
     // 출력문 관련 문제
     // std::left << std::setw(30) : 30칸에서 왼쪽정렬
@@ -148,14 +153,14 @@ int carType::type()
         double salesShare = ((month1 / (double)sumCar) * 100);
         // 실수 출력 원래대로
         std::cout.precision(0);
-        std::cout << number << "\t" << brand1
-                  << "\t" << model1 << "\t" << month1 << "(";
+        std::cout << number << "\t" << std::left << std::setw(15) << brand1
+                  << "\t" << std::left << std::setw(22) << model1 << "\t" << month1 << "(";
         // precision(n) : 소수점 유효숫자 n의 자리 출력
         std::cout.precision(3);
         std::cout << salesShare << "%)" << std::endl;
         number++;
     }
-
+    std::cout << std::endl;
     // 수행하는 구문 종료
     sqlite3_finalize(stmt_check2);
     // sqlite3 종료
@@ -181,7 +186,6 @@ int carType::type_month()
     {
         sumCar = sqlite3_column_int(stmt_check2, 0);
     }
-    std::cout << "총합 : " << sumCar << std::endl;
 
     // 타입별 sql문
     std::string sql2 = "SELECT Brand, Model, " + month + " FROM cars WHERE Type=? ORDER BY " + month + " DESC;";
@@ -205,7 +209,15 @@ int carType::type_month()
     {
         month = "7";
     }
-    std::cout << "순번\t브랜드\t모델\t" << month << "월판매량 점유율" << std::endl;
+    std::cout << "┌─────────────────────────────────────────────┐" << std::endl;
+    std::cout << "│                                             │" << std::endl;
+    std::cout << "│              " + month + "월 자동차 판매 실적           │" << std::endl;
+    std::cout << "│                                             │" << std::endl;
+    std::cout << "└─────────────────────────────────────────────┘" << std::endl;
+    std::cout << "" << std::endl;
+    std::cout << "차종 : " << car_type << std::endl;
+    std::cout << "총 판매량 : " << sumCar << "대" << std::endl;
+    std::cout << "순번\t브랜드\t\t모델\t\t\t" << month << "월판매량(점유율)" << std::endl;
     int number = 1;
 
     while (sqlite3_step(stmt_check2) == SQLITE_ROW)
@@ -217,13 +229,14 @@ int carType::type_month()
         double salesShare = ((month1 / (double)sumCar) * 100);
         // 실수 출력 원래대로
         std::cout.precision(0);
-        std::cout << number << "\t" << brand1 << "\t"
-                  << model1 << "\t" << month1 << "(";
+        std::cout << number << "\t" << std::left << std::setw(15) << brand1 << "\t"
+                  << std::left << std::setw(22) << model1 << "\t" << month1 << "(";
         // precision(n) : 소수점 유효숫자 n의 자리 출력
         std::cout.precision(3);
         std::cout << salesShare << "%)" << std::endl;
         number++;
     }
+    std::cout << std::endl;
     sleep(2);
     // 수행하는 구문 종료
     sqlite3_finalize(stmt_check2);
