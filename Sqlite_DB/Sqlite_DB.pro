@@ -11,15 +11,18 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     login.cpp \
-    secdialog.cpp
+    secdialog.cpp \
+    tableinfo.cpp
 
 HEADERS += \
     login.h \
-    secdialog.h
+    secdialog.h \
+    tableinfo.h
 
 FORMS += \
     login.ui \
-    secdialog.ui
+    secdialog.ui \
+    tableinfo.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

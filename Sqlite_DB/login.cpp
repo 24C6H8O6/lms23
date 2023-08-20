@@ -2,6 +2,7 @@
 #include "ui_login.h"
 #include <QMessageBox>
 #include "secdialog.h"
+#include "tableinfo.h"
 Login::Login(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Login)
@@ -11,10 +12,7 @@ Login::Login(QWidget *parent)
     QPixmap pix("C:/Users/user/OneDrive/바탕 화면/hsu_image.JPG");
     ui->label_pic->setPixmap(pix);
 
-    mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/user/OneDrive/바탕 화면/인력개발원/db/loginsample.db");
-
-    if(!mydb.open())
+    if(!connOpen())
         ui->label->setText("Failed to open the database");
     else
         ui->label->setText("Connected.....");
@@ -32,14 +30,17 @@ void Login::on_pushButton_clicked()
     username = ui->lineEdit_Username->text();
     password = ui->lineEdit_Password->text();
 
-    if(!mydb.isOpen()){
+    if(!connOpen()){
         qDebug() << "Failed to open the database";
         return;
     }
 
+    connOpen();
     QSqlQuery qry;
+    qry.prepare("select * from NewTable where username='"+ username +"' and password='"+ password +"'");
 
-    if(qry.exec("select * from NewTable where username='"+ username +"' and password='"+ password +"'"))
+
+    if(qry.exec())
     {
         int count=0;
         while(qry.next())
@@ -49,10 +50,16 @@ void Login::on_pushButton_clicked()
         if(count==1)
         {
             ui->label->setText("username and password is correct");
-
+            connClose();
             QMessageBox::information(this, tr("로그인"), tr("로그인 성공!!"));
-            secdialog = new SecDialog(this);
-            secdialog->show();
+            this->hide();
+//            secdialog = new SecDialog(this);
+//            secdialog->show();
+//            tableinfo = new TableInfo(this);
+//            tableinfo->show();
+            TableInfo tableinfo;
+            tableinfo.setModal(true);
+            tableinfo.exec();
         }
 
 

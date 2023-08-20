@@ -15,6 +15,28 @@ class Login : public QMainWindow
     Q_OBJECT
 
 public:
+    QSqlDatabase mydb;
+    void connClose()
+    {
+        mydb.close();
+        mydb.removeDatabase(QSqlDatabase::defaultConnection);
+    }
+    bool connOpen()
+    {
+        mydb = QSqlDatabase::addDatabase("QSQLITE");
+        mydb.setDatabaseName("C:/Users/user/OneDrive/바탕 화면/인력개발원/db/loginsample.db");
+
+        if(!mydb.open()) {
+            qDebug() << ("Failed to open the database");
+            return false;
+        }
+        else{
+            qDebug() << ("Connected.....");
+            return true;
+        }
+    }
+
+public:
     Login(QWidget *parent = nullptr);
     ~Login();
 
@@ -23,7 +45,6 @@ private slots:
 
 private:
     Ui::Login *ui;
-    QSqlDatabase mydb;
     SecDialog *secdialog;
 };
 #endif // LOGIN_H
