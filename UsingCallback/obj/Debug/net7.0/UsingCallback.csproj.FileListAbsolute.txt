@@ -1,0 +1,14 @@
+C:\Users\LMS116\source\repos\UsingCallback\bin\Debug\net7.0\UsingCallback.exe
+C:\Users\LMS116\source\repos\UsingCallback\bin\Debug\net7.0\UsingCallback.deps.json
+C:\Users\LMS116\source\repos\UsingCallback\bin\Debug\net7.0\UsingCallback.runtimeconfig.json
+C:\Users\LMS116\source\repos\UsingCallback\bin\Debug\net7.0\UsingCallback.dll
+C:\Users\LMS116\source\repos\UsingCallback\bin\Debug\net7.0\UsingCallback.pdb
+C:\Users\LMS116\source\repos\UsingCallback\obj\Debug\net7.0\UsingCallback.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LMS116\source\repos\UsingCallback\obj\Debug\net7.0\UsingCallback.AssemblyInfoInputs.cache
+C:\Users\LMS116\source\repos\UsingCallback\obj\Debug\net7.0\UsingCallback.AssemblyInfo.cs
+C:\Users\LMS116\source\repos\UsingCallback\obj\Debug\net7.0\UsingCallback.csproj.CoreCompileInputs.cache
+C:\Users\LMS116\source\repos\UsingCallback\obj\Debug\net7.0\UsingCallback.dll
+C:\Users\LMS116\source\repos\UsingCallback\obj\Debug\net7.0\refint\UsingCallback.dll
+C:\Users\LMS116\source\repos\UsingCallback\obj\Debug\net7.0\UsingCallback.pdb
+C:\Users\LMS116\source\repos\UsingCallback\obj\Debug\net7.0\UsingCallback.genruntimeconfig.cache
+C:\Users\LMS116\source\repos\UsingCallback\obj\Debug\net7.0\ref\UsingCallback.dll
