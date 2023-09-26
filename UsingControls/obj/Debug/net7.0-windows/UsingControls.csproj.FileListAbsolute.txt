@@ -1,0 +1,16 @@
+C:\Users\LMS116\source\repos\UsingControls\bin\Debug\net7.0-windows\UsingControls.exe
+C:\Users\LMS116\source\repos\UsingControls\bin\Debug\net7.0-windows\UsingControls.deps.json
+C:\Users\LMS116\source\repos\UsingControls\bin\Debug\net7.0-windows\UsingControls.runtimeconfig.json
+C:\Users\LMS116\source\repos\UsingControls\bin\Debug\net7.0-windows\UsingControls.dll
+C:\Users\LMS116\source\repos\UsingControls\bin\Debug\net7.0-windows\UsingControls.pdb
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\UsingControls.MainForm.resources
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\UsingControls.csproj.GenerateResource.cache
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\UsingControls.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\UsingControls.AssemblyInfoInputs.cache
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\UsingControls.AssemblyInfo.cs
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\UsingControls.csproj.CoreCompileInputs.cache
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\UsingControls.dll
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\refint\UsingControls.dll
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\UsingControls.pdb
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\UsingControls.genruntimeconfig.cache
+C:\Users\LMS116\source\repos\UsingControls\obj\Debug\net7.0-windows\ref\UsingControls.dll
