@@ -1,0 +1,16 @@
+C:\Users\LMS116\source\repos\serverTest1\bin\Debug\net7.0-windows\serverTest1.exe
+C:\Users\LMS116\source\repos\serverTest1\bin\Debug\net7.0-windows\serverTest1.deps.json
+C:\Users\LMS116\source\repos\serverTest1\bin\Debug\net7.0-windows\serverTest1.runtimeconfig.json
+C:\Users\LMS116\source\repos\serverTest1\bin\Debug\net7.0-windows\serverTest1.dll
+C:\Users\LMS116\source\repos\serverTest1\bin\Debug\net7.0-windows\serverTest1.pdb
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\serverTest1.Form1.resources
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\serverTest1.csproj.GenerateResource.cache
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\serverTest1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\serverTest1.AssemblyInfoInputs.cache
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\serverTest1.AssemblyInfo.cs
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\serverTest1.csproj.CoreCompileInputs.cache
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\serverTest1.dll
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\refint\serverTest1.dll
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\serverTest1.pdb
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\serverTest1.genruntimeconfig.cache
+C:\Users\LMS116\source\repos\serverTest1\obj\Debug\net7.0-windows\ref\serverTest1.dll
